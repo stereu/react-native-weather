@@ -64,13 +64,13 @@ class WeatherWidget extends Component {
       <View style={styles.container}>
             <View style={styles.titleContainer}>
               <Text style={[styles.title, (this.props.location && this.props.location.length <= 13) && styles.customTitle]}>{this.state.locationName}</Text>
-      </View>
+      <View style={{flexDirection: 'row'}}>    
+                <Text style={[styles.refreshTimestamp]}>{moment.unix(this.state.time).format("HH:mm")} Uhr</Text>
+              </View>
+</View>
             <View style={[styles.summaryContainer, (this.state.summary.length >= 20) && styles.summaryContainerLong]}>
               <Text style={styles.summary}>{this.state.summary}</Text>
               <Image style={styles.icon} source={ getIcon(this.state.icon) } />
-                                                 <View style={{flexDirection: 'row'}}>    
-                <Text style={[styles.refreshTimestamp]}>Aktualisiert: {moment.unix(this.state.time).format("HH:mm")}</Text>
-              </View>
             </View>
             <View style={styles.tempContainer}>
               <Text>{this.state.temp}</Text>
@@ -114,9 +114,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     marginRight: 5,
-    color: 'grey',
+    color: 'darkgrey',
     fontWeight: '300',
-    textAlign: 'right'
+    textAlign: 'right',
+    fontSize: 'small'
   },
   customTitle:{
     marginTop: 13,

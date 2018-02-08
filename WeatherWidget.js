@@ -65,7 +65,7 @@ class WeatherWidget extends Component {
             <View style={styles.titleContainer}>
               <Text style={[styles.title, (this.props.location && this.props.location.length <= 13) && styles.customTitle]}>{this.state.locationName}</Text>
       <View style={{flexDirection: 'row'}}>    
-                <Text style={[styles.refreshTimestamp]}>{moment.unix(this.state.time).format("HH:mm")} Uhr</Text>
+                <Text>{moment.unix(this.state.time).format("HH:mm")} Uhr</Text>
               </View>
 </View>
             <View style={[styles.summaryContainer, (this.state.summary.length >= 20) && styles.summaryContainerLong]}>
@@ -92,38 +92,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     position: 'relative',
-    borderTopWidth: 1,
-    borderTopColor: '#8294a0',
-    borderBottomWidth: 1,
-    borderBottomColor: '#8294a0',
   },
   titleContainer:{
     flex: 1,
-    borderRightWidth: 1,
-    borderRightColor: '#8294a0'
+
   },
   title:{
     marginTop: 5,
     marginBottom: 5,
     marginRight: 5,
     color: 'black',
-    fontWeight: '700',
+    fontWeight: 'bold',
     textAlign: 'right'
-  },
-  refreshTimestamp:{
-    marginTop: 5,
-    marginBottom: 5,
-    marginRight: 5,
-    color: 'darkgrey',
-    fontWeight: '300',
-    textAlign: 'right',
   },
   customTitle:{
     marginTop: 13,
     marginBottom: 13,
     marginRight: 5,
     color: 'black',
-    fontWeight: '500',
+    fontWeight: 'bold',
     textAlign: 'right'
   },
   summaryContainer: {

@@ -1,6 +1,6 @@
 {
   "name": "react-native-weather",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "A React Native weather component, easily configurable via props.",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,8 @@
     "jest": "17.0.0",
     "react": "^16.0.0-alpha.3",
     "react-native": "^0.43.0",
-    "react-test-renderer": "^15.3.2"
+    "react-test-renderer": "^15.3.2",
+    "moment": "*"
   },
   "keywords": [
     "react",

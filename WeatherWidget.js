@@ -68,6 +68,9 @@ class WeatherWidget extends Component {
             <View style={[styles.summaryContainer, (this.state.summary.length >= 20) && styles.summaryContainerLong]}>
               <Text style={styles.summary}>{this.state.summary}</Text>
               <Image style={styles.icon} source={ getIcon(this.state.icon) } />
+                                                 <View style={{flexDirection: 'row'}}>    
+                <Text style={[styles.refreshTimestamp]}>Aktualisiert: {moment.unix(this.state.time).format("HH:mm")}</Text>
+              </View>
             </View>
             <View style={styles.tempContainer}>
               <Text>{this.state.temp}</Text>
@@ -76,9 +79,6 @@ class WeatherWidget extends Component {
                 {this.state.precipChance}%
               </Text>
               <Image style={styles.precipImage} source={require('./weather-icons/precip.png')} />
-              </View>
-              <View style={{flexDirection: 'row'}}>    
-                <Text style={[styles.refreshTimestamp]}>Aktualisiert: {moment.unix(this.state.time).format("HH:mm")}</Text>
               </View>
             </View>
       </View>

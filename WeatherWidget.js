@@ -65,7 +65,7 @@ class WeatherWidget extends Component {
             <View style={styles.titleContainer}>
               <Text style={[styles.title, (this.props.location && this.props.location.length <= 13) && styles.customTitle]}>{this.state.locationName}</Text>
 <View style={{flexDirection: 'row'}}>    
-<Text style={[styles.title]}>{moment.unix(this.props.time).format("DD.MM.YYYY")}</Text>
+<Text style={[styles.title]}>{moment.unix(this.props.time).format("DD.MM.YYYY")}{this.props.time}</Text>
 </View>
 </View>
             <View style={[styles.summaryContainer, (this.state.summary.length >= 20) && styles.summaryContainerLong]}>

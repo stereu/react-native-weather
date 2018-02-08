@@ -64,10 +64,7 @@ class WeatherWidget extends Component {
       <View style={styles.container}>
             <View style={styles.titleContainer}>
               <Text style={[styles.title, (this.props.location && this.props.location.length <= 13) && styles.customTitle]}>{this.state.locationName}</Text>
-<View style={{flexDirection: 'row'}}>    
-<Text style={[styles.title]}>{moment.unix(this.state.time).format("HH:mm")}</Text>
-</View>
-</View>
+      </View>
             <View style={[styles.summaryContainer, (this.state.summary.length >= 20) && styles.summaryContainerLong]}>
               <Text style={styles.summary}>{this.state.summary}</Text>
               <Image style={styles.icon} source={ getIcon(this.state.icon) } />
@@ -79,6 +76,9 @@ class WeatherWidget extends Component {
                 {this.state.precipChance}%
               </Text>
               <Image style={styles.precipImage} source={require('./weather-icons/precip.png')} />
+              </View>
+              <View style={{flexDirection: 'row'}}>    
+                <Text style={[styles.refreshTimestamp]}>Aktualisiert: {moment.unix(this.state.time).format("HH:mm")}</Text>
               </View>
             </View>
       </View>
@@ -108,6 +108,14 @@ const styles = StyleSheet.create({
     marginRight: 5,
     color: 'black',
     fontWeight: '500',
+    textAlign: 'right'
+  },
+  refreshTimestamp:{
+    marginTop: 5,
+    marginBottom: 5,
+    marginRight: 5,
+    color: 'grey',
+    fontWeight: '300',
     textAlign: 'right'
   },
   customTitle:{

@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     marginRight: 5,
     color: 'black',
-    fontWeight: '500',
+    fontWeight: '700',
     textAlign: 'right'
   },
   refreshTimestamp:{
@@ -117,7 +117,6 @@ const styles = StyleSheet.create({
     color: 'darkgrey',
     fontWeight: '300',
     textAlign: 'right',
-    fontSize: 'small'
   },
   customTitle:{
     marginTop: 13,

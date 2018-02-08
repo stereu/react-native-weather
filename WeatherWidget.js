@@ -19,7 +19,7 @@ class WeatherWidget extends Component {
       this.setState({locationName: this.props.location})
     }
 
-    return fetch('https://api.darksky.net/forecast/' + this.props.api + '/' + this.props.lat + ',' + this.props.lng + '?lang=' + this.props.lang).then((response) => response.json()).then((responseJson) => {
+    return fetch('https://api.darksky.net/forecast/' + this.props.api + '/' + this.props.lat + ',' + this.props.lng + '?lang=' + this.props.lang + '&units=si').then((response) => response.json()).then((responseJson) => {
       this.setState({summary: responseJson.currently.summary, temp: (Math.round(10 * responseJson.currently.temperature)/10) + '°F', icon: responseJson.currently.icon, precipChance: Math.round(responseJson.currently.precipProbability * 1000)/10, isLoading: false});
     }).catch((error) => {
       console.error(error);

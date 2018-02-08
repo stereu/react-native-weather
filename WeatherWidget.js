@@ -11,8 +11,7 @@ class WeatherWidget extends Component {
       temp: '',
       precipChance: '',
       summary: 'Keine Verbindung zum Server',
-      locationName: 'Current \nWeather',
-      time: ''
+      locationName: 'Aktuelles \nWetter',
     }
   }
 
@@ -22,7 +21,7 @@ class WeatherWidget extends Component {
     }
 
     return fetch('https://api.darksky.net/forecast/' + this.props.api + '/' + this.props.lat + ',' + this.props.lng + '?lang=' + this.props.lang + '&units=si').then((response) => response.json()).then((responseJson) => {
-      this.setState({summary: responseJson.currently.summary, temp: (Math.round(10 * responseJson.currently.temperature)/10) + '°C', icon: responseJson.currently.icon, precipChance: Math.round(responseJson.currently.precipProbability * 1000)/10, time: responseJson.currently.time, isLoading: false});
+      this.setState({summary: responseJson.currently.summary, temp: (Math.round(10 * responseJson.currently.temperature)/10) + '°C', icon: responseJson.currently.icon, precipChance: Math.round(responseJson.currently.precipProbability * 1000)/10, isLoading: false});
     }).catch((error) => {
       console.error(error);
       this.setState({isLoading: false});
@@ -64,9 +63,6 @@ class WeatherWidget extends Component {
       <View style={styles.container}>
             <View style={styles.titleContainer}>
               <Text style={[styles.title, (this.props.location && this.props.location.length <= 13) && styles.customTitle]}>{this.state.locationName}</Text>
-      <View style={{flexDirection: 'row'}}>    
-                <Text>{moment.unix(this.state.time).format("HH:mm")} Uhr</Text>
-              </View>
 </View>
             <View style={[styles.summaryContainer, (this.state.summary.length >= 20) && styles.summaryContainerLong]}>
               <Text style={styles.summary}>{this.state.summary}</Text>

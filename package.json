@@ -1,6 +1,6 @@
 {
   "name": "react-native-weather",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "A React Native weather component, easily configurable via props.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/njwest/react-native-weather.git"
+    "url": "git+https://github.com/stereu/react-native-weather.git"
   },
     "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -32,12 +32,12 @@
     "native app"
   ],
   "author": {
-    "name": "Nick West",
-    "email": "mail@nickwest.io"
+    "name": "Nick West & Stephan Reugels",
+    "email": "mail@nickwest.io & stephan@reugels.io"
   },
   "license": "CC-BY-3.0",
   "bugs": {
-    "url": "https://github.com/njwest/react-native-weather/issues"
+    "url": "https://github.com/stereu/react-native-weather/issues"
   },
-  "homepage": "https://github.com/njwest/react-native-weather#readme"
+  "homepage": "https://github.com/stereu/react-native-weather#readme"
 }

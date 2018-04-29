@@ -121,14 +121,11 @@ const styles = StyleSheet.create({
     marginTop: -6
   },
   tempContainer: {
-    flex: .5,
+    flex: 1.5,
     flexDirection: 'column',
     marginTop: 3,
     marginRight: 15,
     alignItems: 'flex-end'
-  },
-  precipImage: {
-    marginTop: 3
   },
   spinner: {
     flex: -1,

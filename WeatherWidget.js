@@ -70,12 +70,6 @@ class WeatherWidget extends Component {
             </View>
             <View style={styles.tempContainer}>
               <Text>{this.state.temp}</Text>
-              <View style={{flexDirection: 'row'}}>
-              <Text>
-                {this.state.precipChance}%
-              </Text>
-              <Image style={styles.precipImage} source={require('./weather-icons/precip.png')} />
-              </View>
             </View>
       </View>
     )

@@ -121,9 +121,9 @@ const styles = StyleSheet.create({
     marginTop: -6
   },
   tempContainer: {
-    flex: 1.5,
+    flex: .5,
     flexDirection: 'column',
-    marginTop: 3,
+    marginTop: 12,
     marginRight: 15,
     alignItems: 'flex-end'
   },

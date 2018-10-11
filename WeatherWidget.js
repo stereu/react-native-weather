@@ -69,7 +69,7 @@ class WeatherWidget extends Component {
               <Image style={styles.icon} source={ getIcon(this.state.icon) } />
             </View>
             <View style={styles.tempContainer}>
-              <Text>{this.state.temp}</Text>
+              <Text style={styles.temp}>{this.state.temp}</Text>
             </View>
       </View>
     )
@@ -115,10 +115,14 @@ const styles = StyleSheet.create({
   },
   summary: {
     marginLeft: 20,
-    marginRight: 10
+    marginRight: 10,
+    color: 'black'
   },
   icon: {
     marginTop: -6
+  },
+  temp: {
+    color: 'black'
   },
   tempContainer: {
     flex: .5,

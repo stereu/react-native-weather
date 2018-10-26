@@ -90,18 +90,18 @@ const styles = StyleSheet.create({
   title:{
     marginTop: 5,
     marginBottom: 5,
-    marginRight: 5,
+    marginLeft: 10,
     color: 'black',
     fontWeight: 'bold',
-    textAlign: 'right'
+    textAlign: 'left'
   },
   customTitle:{
     marginTop: 13,
     marginBottom: 13,
-    marginRight: 5,
+    marginLeft: 10,
     color: 'black',
     fontWeight: 'bold',
-    textAlign: 'right'
+    textAlign: 'left'
   },
   summaryContainer: {
     flex: 1.5,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   summaryContainerLong: {
     flex: 1.5,
     flexDirection: 'row',
-    marginTop: 5
+    marginTop: 4
   },
   summary: {
     marginLeft: 20,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   icon: {
-    marginTop: -6
+    alignSelf: 'center'
   },
   temp: {
     color: 'black'
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     flex: .5,
     flexDirection: 'column',
     marginTop: 12,
-    marginRight: 15,
+    marginRight: 10,
     alignItems: 'flex-end'
   },
   spinner: {

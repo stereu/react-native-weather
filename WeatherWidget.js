@@ -80,24 +80,20 @@ const styles = StyleSheet.create({
   container: {
     flex: -1,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
-    position: 'relative',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative'
   },
   titleContainer:{
     flex: 1,
-
   },
   title:{
-    marginTop: 5,
-    marginBottom: 5,
     marginLeft: 10,
     color: 'black',
     fontWeight: 'bold',
     textAlign: 'left'
   },
   customTitle:{
-    marginTop: 13,
-    marginBottom: 13,
     marginLeft: 10,
     color: 'black',
     fontWeight: 'bold',
@@ -106,12 +102,11 @@ const styles = StyleSheet.create({
   summaryContainer: {
     flex: 1.5,
     flexDirection: 'row',
-    marginTop: 12
+      alignItems: 'center'
   },
   summaryContainerLong: {
     flex: 1.5,
-    flexDirection: 'row',
-    marginTop: 4
+    flexDirection: 'row'
   },
   summary: {
     marginLeft: 20,
@@ -119,7 +114,7 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   icon: {
-    alignSelf: 'center'
+    tintColor: 'black'
   },
   temp: {
     color: 'black'
@@ -127,14 +122,11 @@ const styles = StyleSheet.create({
   tempContainer: {
     flex: .5,
     flexDirection: 'column',
-    marginTop: 12,
     marginRight: 10,
     alignItems: 'flex-end'
   },
   spinner: {
     flex: -1,
-    marginTop: 12,
-    marginBottom: 12
   }
 });
 

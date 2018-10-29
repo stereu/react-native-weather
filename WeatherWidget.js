@@ -9,19 +9,15 @@ class WeatherWidget extends Component {
       isLoading: true,
       icon: 'default',
       temp: '',
-      precipChance: '',
       summary: 'Keine Verbindung zum Server',
-      locationName: 'Aktuelles \nWetter',
+      locationName: 'Waschwetter',
     }
   }
 
   componentDidMount() {
-    if (this.props.location){
-      this.setState({locationName: this.props.location})
-    }
 
-    return fetch('https://api.darksky.net/forecast/' + this.props.api + '/' + this.props.lat + ',' + this.props.lng + '?lang=' + this.props.lang + '&units=si').then((response) => response.json()).then((responseJson) => {
-      this.setState({summary: responseJson.currently.summary, temp: (Math.round(1 * responseJson.currently.temperature)/1) + '°C', icon: responseJson.currently.icon, precipChance: Math.round(responseJson.currently.precipProbability * 1000)/10, isLoading: false});
+    return fetch('http://api.83metoo.de/v0/jwt/weather/' + this.props.lng + '/' + this.props.lat).then((response) => response.json()).then((responseJson) => {
+      this.setState({summary: responseJson.data.forecast, temp: (Math.round(1 * responseJson.data.temp)/1) + '°C', icon: responseJson.data.icon, isLoading: false});
     }).catch((error) => {
       console.error(error);
       this.setState({isLoading: false});

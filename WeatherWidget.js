@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { NetInfo, Image, View, Text, ActivityIndicator, StyleSheet } from 'react-native';
-import moment from 'moment';
-import WeatherIcon from 'react-icons-weather';
 
 class WeatherWidget extends Component {
     constructor(props) {
@@ -35,6 +33,24 @@ class WeatherWidget extends Component {
             )
         }
 
+        const icons = {
+            'partly-cloudy-day': require('./weather-icons/partly-cloudy-day.png'),
+            'partly-cloudy-night': require('./weather-icons/partly-cloudy-night.png'),
+            'clear-day': require('./weather-icons/clear-day.png'),
+            'clear-night': require('./weather-icons/clear-night.png'),
+            'rain': require('./weather-icons/rain.png'),
+            'snow': require('./weather-icons/snow.png'),
+            'sleet': require('./weather-icons/sleet.png'),
+            'wind': require('./weather-icons/wind.png'),
+            'fog': require('./weather-icons/fog.png'),
+            'cloudy': require('./weather-icons/cloudy.png'),
+            'hail': require('./weather-icons/hail.png'),
+            'thunderstorm': require('./weather-icons/thunderstorm.png'),
+            'tornado': require('./weather-icons/tornado.png'),
+            'meteor-shower': require('./weather-icons/meteor-shower.png'),
+            'default': require('./weather-icons/default.png')
+        }
+
         function getIcon(icon){
             return icons[icon];
         }
@@ -46,7 +62,7 @@ class WeatherWidget extends Component {
                 </View>
                 <View style={[styles.summaryContainer, (this.state.summary.length >= 20) && styles.summaryContainerLong]}>
                     <Text style={styles.summary}>{this.state.summary}</Text>
-                    <WeatherIcon name="darksky" iconId={this.state.icon} flip="horizontal" rotate="90" />
+                    <Image style={styles.icon} source={ getIcon(this.state.icon) } />
                 </View>
                 <View style={styles.tempContainer}>
                     <Text style={styles.temp}>{this.state.temp}</Text>

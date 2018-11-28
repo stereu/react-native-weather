@@ -17,7 +17,7 @@ class WeatherWidget extends Component {
 
         return fetch('http://api.83metoo.de/v0/jwt/weather/' + this.props.lng + '/' + this.props.lat)
             .then((response) => response.json())
-            .then((responseJson) => {(responseJson.success === 1) ? this.setState({summary: responseJson.data.forecast, temp: (Math.round(1 * responseJson.data.temp)/1) + '°C', icon: responseJson.data.icon, isLoading: false}) : this.setState({summary: 'Bewölkt', icon: 'partly-cloudy-day', isLoading: false});
+            .then((responseJson) => {(responseJson.success == 1) ? this.setState({summary: responseJson.data.forecast, temp: (Math.round(1 * responseJson.data.temp)/1) + '°C', icon: responseJson.data.icon, isLoading: false}) : this.setState({summary: 'Bewölkt', icon: 'partly-cloudy-day', isLoading: false});
         }).catch((error) => {
             console.error(error);
             this.setState({isLoading: false});
@@ -110,7 +110,9 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     icon: {
-        tintColor: 'black'
+        tintColor: 'black',
+        width: 25,
+        height: 25
     },
     temp: {
         color: 'black'
